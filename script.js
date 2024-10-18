@@ -6,9 +6,9 @@ let grid = document.getElementById("grid");
 
 // Add a row
 function addR() {
-    const row  = grid.insertRow();
+    const row = grid.insertRow();
     for (let i = 0; i < numCols; i++) {
-        const cell = row.InsertCell(); 
+        const cell = row.insertCell(); 
         cell.onclick = () => colorCell(cell);
     }
     numRows++;
