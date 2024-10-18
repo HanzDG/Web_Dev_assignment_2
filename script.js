@@ -6,7 +6,7 @@ let colorSelected;
 // Add a row
 function addR() {
     const grid = document.getElementById("grid");
-    const row  = grid.insertRow()
+    const row  = grid.insertRow();
     for (let i = 0; i < numCols; i++) {
         const cell = row.InsertCell(); 
         cell.onclick = () => colorCell(cell);
