@@ -24,13 +24,13 @@ function addR() {
 
 // Add a column
 function addC() {
-    const grid = document.getElementById("grid");
-    const col = grid.insertCol();
+    numCols++;
     for (let i = 0; i < numRows; i++) {
-        const cell = col.InsertCol();
-        cell.onclick = function() {
-            cell.style.backgroundColor = colorSelected;
-        }
+        const row = grid.rows[i];
+        const newCell = document.createElement("td");
+        newCell.style.backgroundColor = "white";
+        newCell.onclick = () => colorCell(newCell);
+        row.appendChild(newCell);
     }
 }
 
