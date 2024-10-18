@@ -6,12 +6,19 @@ let grid = document.getElementById("grid");
 
 // Add a row
 function addR() {
-    const row = grid.insertRow();
+    const row = document.createElement("tr");
     for (let i = 0; i < numCols; i++) {
-        const cell = row.insertCell(); 
+        const cell = document.createElement("td"); 
+        cell.style.backgroundColor = "white";
         cell.onclick = () => colorCell(cell);
+        row.appendChild(cell);
     }
+    grid.appendChild(row);
     numRows++;
+
+    if (numCols === 0) {
+        numCols = 1;
+    }
 }
 
 
