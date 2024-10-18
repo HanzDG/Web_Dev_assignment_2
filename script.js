@@ -5,7 +5,14 @@ let colorSelected;
 
 // Add a row
 function addR() {
-    alert("Clicked Add Row"); // Replace this line with your code.
+    const grid = document.getElementById("grid");
+    const row  = grid.insertRow()
+    for (let i = 0; i < numCols; i++) {
+        const cell = row.InsertCell(); 
+        cell.onclick = function() {
+            cell.style.backgroundColor = colorSelected;
+        }
+    }
 }
 
 // Add a column
