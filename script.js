@@ -9,11 +9,11 @@ function addR() {
     const row  = grid.insertRow()
     for (let i = 0; i < numCols; i++) {
         const cell = row.InsertCell(); 
-        cell.onclick = function() {
-            cell.style.backgroundColor = colorSelected;
-        }
+        cell.onclick = () => colorCell(cell);
     }
+    numRows++;
 }
+
 
 // Add a column
 function addC() {
