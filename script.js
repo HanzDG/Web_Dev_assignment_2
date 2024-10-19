@@ -9,7 +9,7 @@ function addR() {
     const row = document.createElement("tr");
     for (let i = 0; i < numCols; i++) {
         const cell = document.createElement("td"); 
-        cell.style.backgroundColor = "white";
+        cell.style.backgroundColor = "";
         cell.onclick = () => colorCell(cell);
         row.appendChild(cell);
     }
@@ -28,7 +28,7 @@ function addC() {
     for (let i = 0; i < numRows; i++) {
         const row = grid.rows[i];
         const newCell = document.createElement("td");
-        newCell.style.backgroundColor = "white";
+        newCell.style.backgroundColor = "";
         newCell.onclick = () => colorCell(newCell);
         row.appendChild(newCell);
     }
@@ -68,8 +68,16 @@ function selectColor(){
 }
 
 // Fill all uncolored cells
-function fillU(){
-    alert("Clicked Fill All Uncolored"); // Replace this line with your code.
+function fillU() {
+    for (let i = 0; i < grid.rows.length; i++) {
+        const row = grid.rows[i];
+        for (let j = 0; j < row.cells.length; j++) {
+            const cell = row.cells[j];
+            if (cell.style.backgroundColor === "") {
+                cell.style.backgroundColor = colorSelected;
+            }
+        }
+    }
 }
 
 // Fill all cells
