@@ -46,7 +46,19 @@ function removeR() {
 
 // Remove a column
 function removeC() {
-    alert("Clicked Remove Col"); // Replace this line with your code.
+    if (numCols === 0) {
+        alert("No columns to remove");
+        return 0;
+    }
+    for (let i = 0; i < numRows; i++) {
+        const row = grid.rows[i];
+        row.removeChild(row.lastChild);
+    }
+    numCols--;
+    
+    if (numCols === 0) {
+        numRows = 0;
+    }
 }
 
 // Set global variable for selected color
