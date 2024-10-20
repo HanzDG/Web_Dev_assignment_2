@@ -10,7 +10,7 @@ function addR() {
     for (let i = 0; i < numCols; i++) {
         const cell = document.createElement("td"); 
         cell.style.backgroundColor = "";
-        cell.onclick = () => colorCell(cell);
+        cell.onclick = () => colorCell(cell); 
         row.appendChild(cell);
     }
     grid.appendChild(row);
@@ -99,5 +99,13 @@ function clearAll(){
             const cell = row.cells[j];
             cell.style.backgroundColor = "";
         }
+    }
+}
+
+function colorCell(cell) {
+    if (colorSelected && colorSelected !== "SELECT") {
+        cell.style.backgroundColor = colorSelected;
+    } else {
+        alert("Please select a color first.");
     }
 }
