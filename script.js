@@ -82,10 +82,22 @@ function fillU() {
 
 // Fill all cells
 function fillAll(){
-    alert("Clicked Fill All"); // Replace this line with your code.
+    for (let i = 0; i < grid.rows.length; i++) {
+        const row = grid.rows[i];
+        for (let j = 0; j < row.cells.length; j++) {
+            const cell = row.cells[j];
+            cell.style.backgroundColor = colorSelected;
+        }
+    }
 }
 
 // Clear all cells
 function clearAll(){
-    alert("Clicked Clear All"); // Replace this line with your code.
+    for (let i = 0; i < grid.rows.length; i++) {
+        const row = grid.rows[i];
+        for (let j = 0; j < row.cells.length; j++) {
+            const cell = row.cells[j];
+            cell.style.backgroundColor = "";
+        }
+    }
 }
